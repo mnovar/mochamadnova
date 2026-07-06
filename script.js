@@ -52,7 +52,7 @@
             if (sendMethod === 'email') {
                 const subject = 'Message from Portfolio Contact Form';
                 const body = `Name: ${name} Message: ${message}`;
-                const url = `mailto:muhammadnaufal1192@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const url = `mailto:mochamadnovar@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = url;
             } else if (sendMethod === 'whatsapp') {
                 const waNumber = '6285158789460';
