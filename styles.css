@@ -1,0 +1,169 @@
+        :root {
+            --sidebar-width: 80px;
+            --bg-body: #1e1e1e; /* VS Code Dark */
+            --bg-sidebar: #333333;
+            --accent-color: #007acc; /* VS Code Blue */
+            --text-secondary: #858585;
+            --code-green: #4ec9b0;
+            --code-orange: #ce9178;
+        }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: var(--bg-body);
+            color: #d4d4d4;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Navigation (Activity Bar Style) */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--bg-sidebar);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1000;
+            border-right: 1px solid #444;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #fff;
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: -16px; /* Adjust alignment */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        /* Typing Effect */
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Cards & Sections */
+        .section-title {
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .skill-card {
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .project-img {
+            height: 180px;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .card:hover .project-img {
+            opacity: 1;
+        }
+
+        /* Tags */
+        .tech-tag {
+            font-size: 0.8rem;
+            color: var(--code-green);
+        }
+        
+        /* Line Numbers (Decorative) */
+        .line-numbers {
+            color: #555;
+            margin-right: 15px;
+            user-select: none;
+            text-align: right;
+            display: inline-block;
+            width: 30px;
+        }
+
+        /* Contact Form */
+        .form-control {
+            background-color: #3c3c3c;
+            border: 1px solid #555;
+            color: #fff;
+        }
+        .form-control:focus {
+            background-color: #3c3c3c;
+            color: #fff;
+            border-color: var(--accent-color);
+            box-shadow: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: 60px;
+                flex-direction: row;
+                justify-content: center;
+                padding-top: 0;
+                bottom: 0;
+                top: auto;
+                border-right: none;
+                border-top: 1px solid #444;
+            }
+            .nav-link {
+                margin-bottom: 0;
+                margin-right: 30px;
+                font-size: 1.2rem;
+            }
+            .nav-link.active::before {
+                height: 3px;
+                width: 100%;
+                top: auto;
+                bottom: -10px;
+                left: 0;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+                padding-bottom: 80px; /* Space for bottom nav */
+            }
+        }
+
+        /* Profile Photo Styling */
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
