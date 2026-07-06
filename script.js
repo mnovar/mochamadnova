@@ -51,7 +51,7 @@
             
             if (sendMethod === 'email') {
                 const subject = 'Message from Portfolio Contact Form';
-                const body = `Name: ${name}%0A%0AMessage: ${message}`;
+                const body = `Name: ${name}%0AMessage: ${message}`;
                 const url = `mailto:muhammadnaufal1192@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = url;
             } else if (sendMethod === 'whatsapp') {
